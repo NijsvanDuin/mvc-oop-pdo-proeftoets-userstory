@@ -28,10 +28,7 @@ class Wagenparken extends Controller
             <td>$info->Kenteken</td>
             <td><a href='" . URLROOT . "/wagenparken/addKmstand/{$info->id}'><img src='" . URLROOT . "/img/b_report.png' alt='topic'></a></td>
             </tr>";
-            var_dump($info);
         }
-
-        var_dump($result);
 
         $data = [
             'title' => "Invoegen km stand",

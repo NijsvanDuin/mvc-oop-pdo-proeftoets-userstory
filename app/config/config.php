@@ -6,6 +6,6 @@ define('DB_NAME', 'BE-Oefentoets-MVC');
 
 define('APPROOT', dirname(dirname(__FILE__)));
 
-define('URLROOT', 'http://mvc-oop-pdo-proeftoets-userstory.local');
+define('URLROOT', 'http://new.mvc.be.gg');
 
 define('SITENAME', 'MVC Framework oefenToets');
