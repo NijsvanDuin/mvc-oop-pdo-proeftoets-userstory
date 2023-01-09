@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 09 jan 2023 om 08:08
+-- Gegenereerd op: 09 jan 2023 om 08:24
 -- Serverversie: 5.7.31
 -- PHP-versie: 8.1.10
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `BE-Oefentoets-MVC`
 --
+CREATE DATABASE IF NOT EXISTS `BE-Oefentoets-MVC` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `BE-Oefentoets-MVC`;
 
 -- --------------------------------------------------------
 
@@ -44,6 +46,38 @@ INSERT INTO `Auto` (`id`, `Kenteken`, `Type`) VALUES
 (2, 'TH-78-KL', 'Ferrari'),
 (3, '90-KL-TR ', 'Fiat 500'),
 (4, 'YY-OP-78', 'Mercedes');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `Kilometerstand`
+--
+
+DROP TABLE IF EXISTS `Kilometerstand`;
+CREATE TABLE IF NOT EXISTS `Kilometerstand` (
+  `AutoId` int(11) NOT NULL,
+  `Datum` datetime NOT NULL,
+  `KmStand` int(11) NOT NULL,
+  KEY `AutoId` (`AutoId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `Kilometerstand`
+--
+
+INSERT INTO `Kilometerstand` (`AutoId`, `Datum`, `KmStand`) VALUES
+(3, '2023-01-09 07:57:33', 70788),
+(3, '2022-12-12 10:53:01', 123234);
+
+--
+-- Beperkingen voor geëxporteerde tabellen
+--
+
+--
+-- Beperkingen voor tabel `Kilometerstand`
+--
+ALTER TABLE `Kilometerstand`
+  ADD CONSTRAINT `AutoId` FOREIGN KEY (`AutoId`) REFERENCES `Auto` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
