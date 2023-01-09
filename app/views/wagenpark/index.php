@@ -1,6 +1,6 @@
 <?php require(APPROOT . '/views/includes/header.php') ?>
 <h3><?= $data['title'] ?></h3>
-<table class="border border-black">
+<table class="border border-black border-">
     <thead>
         <th>Type</th>
         <th>Kenteken</th>
